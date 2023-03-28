@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane fx:controller="ma.enset.examen.presentation.controllers.AdherentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox prefHeight="139.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nom :" />
+                  <Label text="Prenom :" GridPane.rowIndex="1" />
+                  <Label text="Email :" GridPane.rowIndex="2" />
+                  <Label text="Phone :" GridPane.columnIndex="2" />
+                  <Label text="Cin :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Date de naissance :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="nom" GridPane.columnIndex="1" />
+                  <TextField fx:id="prenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="phone" GridPane.columnIndex="3" />
+                  <TextField fx:id="cin" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="date" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <HBox prefHeight="26.0" prefWidth="350.0">
+               <VBox.margin>
+                  <Insets left="180.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Button onAction="#ajouter" mnemonicParsing="false" text="Ajouter" />
+                  <Button onAction="#delete" mnemonicParsing="false" text="Supprimer" />
+                  <Button mnemonicParsing="false" text="Modifier" />
+                  <TextField />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableAdherent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="cNom" prefWidth="70.0" text="Nom" />
+          <TableColumn fx:id="cPrenom" prefWidth="73.0" text="Prenom" />
+            <TableColumn fx:id="cEmail" prefWidth="146.0" text="Email" />
+            <TableColumn fx:id="cTele" prefWidth="115.0" text="Telephone" />
+            <TableColumn fx:id="cCin" prefWidth="78.0" text="Cin" />
+            <TableColumn fx:id="cNaissance" prefWidth="117.0" text="Date de naissance" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
